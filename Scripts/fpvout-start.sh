@@ -4,4 +4,4 @@ export DISPLAY=:0;
 
 cd /home/fpvout/Scripts/fpv-c/ 
 
-./fpv-video-out | /opt/vc/src/hello_pi/hello_video/hello_video.bin
+./fpv-video-out | ffmpeg -vcodec copy | vlc --sout '#standard{access=http,mux=ts,dst=localhost:8080}'
